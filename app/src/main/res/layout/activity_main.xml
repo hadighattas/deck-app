@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hadi.deck.MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/ConstraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/LinearLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:cropToPadding="false"
+            android:scaleType="center"
+            app:srcCompat="@drawable/ic_card_back" />
+
+        <TextView
+            android:id="@+id/tv_rank_1"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="33dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_card"
+            app:layout_constraintHorizontal_bias="0.085"
+            app:layout_constraintLeft_toLeftOf="@id/iv_card"
+            app:layout_constraintRight_toRightOf="@id/iv_card"
+            app:layout_constraintTop_toTopOf="@id/iv_card"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <TextView
+            android:id="@+id/tv_rank_2"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="33dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_card"
+            app:layout_constraintHorizontal_bias="0.915"
+            app:layout_constraintLeft_toLeftOf="@id/iv_card"
+            app:layout_constraintRight_toRightOf="@id/iv_card"
+            app:layout_constraintTop_toTopOf="@id/iv_card"
+            app:layout_constraintVertical_bias="0.945" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ConstraintLayout">
+
+
+        <Button
+            android:id="@+id/btn_shuffle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="shuffleDeck"
+            android:text="@string/shuffle"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/btn_deal" />
+
+        <ImageButton
+            android:id="@+id/btn_refresh"
+            android:onClick="refreshDeck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_refresh"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_deal"
+            app:layout_constraintLeft_toRightOf="@id/btn_shuffle"/>
+
+        <Button
+            android:id="@+id/btn_deal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="dealCard"
+            android:text="@string/deal"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintLeft_toLeftOf="@id/btn_shuffle"
+            app:layout_constraintRight_toRightOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
+
