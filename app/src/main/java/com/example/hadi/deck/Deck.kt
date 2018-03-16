@@ -10,6 +10,7 @@ import java.io.OutputStream
 
 
 class Deck {
+
     var cards: MutableList<Card> = mutableListOf()
 
     init {
@@ -29,12 +30,10 @@ class Deck {
      * @note use with ?. as the return type is nullable
      */
     fun dealOneCard(): Null {
-
-//        if (cards.isNotEmpty())
-//            return cards.removeAt(0)
-//        else
-//            return Null()
-        return if (cards.isNotEmpty()) cards.removeAt(0) else Null()
+        if (cards.isNotEmpty())
+            return cards.removeAt(0)
+        else
+            return Null()
     }
 
     /**
@@ -43,7 +42,10 @@ class Deck {
     fun getSize(): Int = cards.size
 
     /**
-     * Prints all the deck
+     * Prints all the deck to a given OutputStream
+     * @param outputStream
      */
     fun print(outputStream: OutputStream) = cards.forEach { card -> card.print(outputStream) }
+
+
 }
